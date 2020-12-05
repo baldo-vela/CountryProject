@@ -15,7 +15,7 @@ class PlacesQuery
         url = "https://restcountries.eu/rest/v2/all" 
         raw_query_data = RestClient.get(url)
         data = JSON.parse(raw_query_data.body)
-        data.each {|key| Country.new(key["name"],key["capital"]) }
+        data.each {|key| Country.new(key["name"],key["region"],key["capital"],key["currencies"]) }
         binding.pry
         #Lead.new_from_json(data)
     end
@@ -26,3 +26,4 @@ class PlacesQuery
     #end
 
 end
+
