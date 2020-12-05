@@ -1,6 +1,7 @@
 class Cli
     def call
         welcome 
+        PlacesQuery.query_to_hash #debatable where in the flow control to load this volume of data
         main_menu
         goodbye
     end
@@ -21,7 +22,7 @@ class Cli
                 case input.to_i 
                 when 1
                     #List all countries
-                    list_results
+                    list_countries
                 when 2..10 #work in progress
                     puts "Sorry User, that functionality is offline."
                 end
@@ -31,10 +32,11 @@ class Cli
         end
     end
 #-Menu Functional Methods----------------------------------------------------------------------------------------------------------------------------
-    def list_results
-        puts "Search Results:"
-        @leads = LeadBookBuilder::Lead.all
-        @leads.each.with_index(1) { |lead, i| puts "#{i}. #{lead.name} " }
+    def list_countries
+        puts "Behold all the Countries in the World:"
+        @countries = Country.all
+        @countries.each.with_index(1) { |lead, i| puts "#{i}. #{lead.name} " }
+        puts "Which country would you like to know more about?"
     end
 
     def goodbye
