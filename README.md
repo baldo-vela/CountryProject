@@ -1,8 +1,6 @@
-# Project
+# Flatiron Phase 1 Project: Country Information Reference
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to my first CLI Project as part of our course at Flatiron School of Software Engineering. This little gem queries restcountries.eu, an open and free to use API that contains geographical information about all the recognized countries on Earth.
 
 ## Installation
 
